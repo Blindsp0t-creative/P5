@@ -21,20 +21,16 @@ var detector;
 var classifier = objectdetect.frontalface;
 var faces;
 
-var screenAspectRatio, webcamAspectRatio;
-
 ///////////////////////////////////////////////////////////////////////
 function setup() {
 
     capture = createCapture(VIDEO);
-    //createCanvas(w, h);
-    createCanvas(windowWidth,windowHeight);
-    
+    createCanvas(w, h);
     capture.size(w, h);
     capture.hide();
 
     background(0);
-    //createCanvas(w,h);
+    createCanvas(w,h);
 
     img = new p5.Image(w,h);
     originalPic = new p5.Image(w,h);
@@ -48,9 +44,7 @@ function setup() {
 
     select("#saveImg").hide();
     select("#restart").hide();
-    
-    screenAspectRatio = windowWidth/windowHeight;
-    webcamAspectRatio = 640/480;
+
 }
 
 
@@ -67,15 +61,13 @@ function draw() {
             column++;
             img.updatePixels();
         }
-        //image(img, 0, 0, w, h);
-        image(img, 0,0,windowWidth,windowWidth/webcamAspectRatio);
+        image(img, 0, 0, w, h);
     }
 
     if(live==1)
     {
         capture.loadPixels();
-        //image(capture, 0, 0, w, h);
-        image(capture, 0,0,windowWidth,windowWidth/webcamAspectRatio);
+        image(capture, 0, 0, w, h);
     }
 }
 

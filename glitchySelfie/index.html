@@ -1,35 +1,76 @@
 <!doctype html>
 <meta charset="UTF-8">
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>DataMosh</title>
-    <script src="../libs/p5/p5.js"></script>
-    <script src="../libs/p5/addons/p5.dom.js"></script>
-    <script src="../shared/utils.js"></script>
-    <script src="../libs/objdetect/objectdetect.js"></script>
-    <script src="../libs/objdetect/objectdetect.frontalface.js"></script>
-    
-    <script src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js"></script>
-    <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
-    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
-    
-    <style>
-        * {
-            font-family: sans-serif;
-        }
-    </style>
-</head>
-    
-  <body>
-      <h2>DataMoshing / PixelSort Experiments with <a href="https://p5js.org">P5.js</a></h2>
-      <h2>Glitchy Selfies by <a href="http://www.blindsp0t.com">blindsp0t</a> ;)</h2>
-      <p><button id="takePhoto" onclick="clickTakePhoto()" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase;">take photo</button></p>
-      <span id="info"></span><p><button id="restart" onclick="location.reload();" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase;">take another photo</button></p>
-      <p><button id="saveImg" onclick="save2()" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase;">save</button></p>
-      
-      
-    <script src="sketch.js"></script>
-  </body>
-    
-</html>
+    <head>
+        <meta charset="UTF-8">
+        <title>DataMosh</title>
+        <script src="../libs/p5/p5.js"></script>
+        <script src="../libs/p5/addons/p5.dom.js"></script>
+        <script src="../shared/utils.js"></script>
+        <script src="../libs/objdetect/objectdetect.js"></script>
+        <script src="../libs/objdetect/objectdetect.frontalface.js"></script>
+
+        <script src="https://cdn.rawgit.com/eligrey/Blob.js/0cef2746414269b16834878a8abc52eb9d53e6bd/Blob.js"></script>
+        <script src="https://cdn.rawgit.com/eligrey/canvas-toBlob.js/f1a01896135ab378aa5c0118eadd81da55e698d8/canvas-toBlob.js"></script>
+        <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/e9d941381475b5df8b7d7691013401e171014e89/FileSaver.min.js"></script>
+
+        <style type="text/css">
+            body {margin:0; padding:0;} /* remove top and left whitespace */
+            canvas {display:block;}    /* remove scrollbars */
+            canvas:focus {outline:0;} /* remove blue outline around canvas */
+            .fs {position:fixed; bottom:20px; right:20px;}
+            #enter {display:block;}
+            #exit {display:none;}
+                max-width: 100%;
+                max-height: 100%;
+                margin: auto;
+                overflow: auto;
+        </style>  
+    </head>
+
+    <body>
+        <script src="sketch.js"></script>
+        <DIV STYLE="position:absolute;
+                    top:5em;
+                    left:3em;
+                    width:200em;
+                    height:15em;
+                    background-color:transparent;
+                    ">
+            <h2>DataMoshing / PixelSort Experiments with <a href="https://p5js.org">P5.js</a></h2>
+            <h2>Glitchy Selfies by <a href="http://www.blindsp0t.com">blindsp0t</a> ;)</h2>
+        </DIV>
+        
+        <div STYLE="position:absolute;
+                    top:5em;
+                    right:0;
+                    width:300px;
+                    height:15em;
+                    background-color:transparent;
+                    ">
+            <h3>
+             <font color="red" style="font-family:'Courier New'; font-size:15px" > <span id="info"></span> </font>
+                </h3>
+        </div>
+        
+        <div STYLE="height: 40px; 
+                    position: fixed; 
+                    bottom:5%;
+                    width:100%; 
+                    background-color:transparent;
+                    justify-content: center;
+                    display: flex;
+                    ">
+            <button id="takePhoto" onclick="clickTakePhoto()" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase;">take photo</button>
+            
+            <button id="saveImg" onclick="save2()" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase;">save</button>
+            
+            <button id="restart" onclick="location.reload();" style="font-weight: bold;  font-size: 150%;  text-transform: uppercase; margin-left:3px;">take another photo</button>
+            
+        </div>
+
+            </body>
+
+        </html>
+
+
